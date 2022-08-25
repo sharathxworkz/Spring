@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- more bean definitions go here -->
+
+	<bean class="com.xworkz.football.FootBall">
+		<constructor-arg name="name" value="Nike"></constructor-arg>
+	</bean>
+	<bean class="com.xworkz.football.Basketball">
+	<constructor-arg name = "name" value = "Bosco"></constructor-arg>
+		<constructor-arg name = "airFilled" value = "True"></constructor-arg>
+	</bean>
+	<bean class="com.xworkz.football.SkyDiving">
+	<constructor-arg name = "location" value = "Spain"></constructor-arg>
+	<constructor-arg name = "height" value = "500000"></constructor-arg>
+	<constructor-arg name = "price" value = "100000.00D"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.String"></bean>
+
+	<bean class="java.lang.Integer">
+		<constructor-arg name="value" value="12"></constructor-arg>
+	</bean>
+	<bean class="java.lang.Double">
+		<constructor-arg name="value" value="20.00D"></constructor-arg>
+	</bean>
+	<bean class="java.lang.Float">
+		<constructor-arg name="value" value="2.52"></constructor-arg>
+		<constructor-arg name="value" value="20.00D"></constructor-arg>
+	</bean>
+	<bean class="java.lang.Character">
+		<constructor-arg name="value" value="A"></constructor-arg>
+	</bean>
+	<bean class="java.lang.Boolean">
+		<constructor-arg name="value" value="true"></constructor-arg>
+	</bean>
+</beans> 
