@@ -28,6 +28,14 @@ public class FootBall {
 		System.out.println(this.getClass().getSimpleName()+ " Bean Created");
 	}
 	
+	public FootBall( String name,Double price) {
+		this("Suhas");
+		System.out.println("Hello");
+		this.brandName = name;
+		this.price = price;
+		System.out.println(this.getClass().getSimpleName()+ " Bean Created");
+	}
+	
 	@Override
 	public String toString() {
 		return "FootBall [brandName=" + brandName + ", price=" + price + "]";

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- String brandName, String resolution, Double price, Remote remote, SetupBox box, Stand stand,
+			Display display -->
+	<bean class="com.xworkz.television.Tv">
+	<property name = "brandName" value = "LG"></property>
+	<property name = "resolution" value = "1080p"></property>
+	<property name = "price" value = "30000.00D"></property>
+	<property name = "remote" ref = "remote"></property>
+	<property name = "box" ref = "sbox"></property>
+	<property name = "stand" ref = "st"></property>
+	<property name = "display" ref = "disp"></property>
+	</bean>
+
+	<bean class="com.xworkz.television.Display" id="disp">
+	<property name="type" value = "LED"></property>
+	</bean>
+	<bean class="com.xworkz.television.Remote" id="remote">
+	<property name="type" value = "Universal"></property>
+	 <property name="noOfBattery" value = "1"></property>
+	</bean>
+	<bean class="com.xworkz.television.Stand" id="st">
+	<property name="standMaterial" value = "TriPod"></property>
+	</bean>
+	<bean class="com.xworkz.television.SetupBox" id="sbox">
+	<property name="companyName" value = "Airtel"></property>
+	</bean>
+</beans>
+
+
+
+
+<!-- <constructor-arg name = "brandName" value = "LG"></constructor-arg>
+	<constructor-arg name = "resolution" value = "1080p"></constructor-arg>
+	<constructor-arg name = "price" value = "30000.00D"></constructor-arg>
+	<constructor-arg name = "remote" ref = "remote"></constructor-arg>
+	<constructor-arg name = "box" ref = "sbox"></constructor-arg>
+	<constructor-arg name = "stand" ref = "st"></constructor-arg>
+	<constructor-arg name = "display" ref = "disp"></constructor-arg>
+ -->	
+	<!-- <bean class="com.xworkz.television.Display" id="disp">
+		<constructor-arg name="type" value="LED"></constructor-arg>
+		<property name="type" value = "LED"></property>
+	</bean>
+
+	<bean class="com.xworkz.television.Remote" id="remote">
+		<constructor-arg name="type" value="Universal"></constructor-arg>
+		<constructor-arg name="noOfBattery" value="1"></constructor-arg>
+	 
+	 <property name="type" value = "Universal"></property>
+	 <property name="noOfBattery" value = "1"></property>
+	</bean>
+
+	<bean class="com.xworkz.television.Stand" id="st">
+	<constructor-arg name = "standMaterial" value = "TriPod"></constructor-arg>
+	<property name="standMaterial" value = "TriPod"></property>
+	</bean>
+
+	<bean class="com.xworkz.television.SetupBox" id="sbox">
+	<constructor-arg name = "companyName" value = "Airtel"></constructor-arg>
+	
+	<property name="companyName" value = "Airtel"></property>
+	</bean> -->

@@ -7,7 +7,7 @@ public class FootballRunner {
 
 	public static void main(String[] args) {
 		
-		 ApplicationContext contianer = new ClassPathXmlApplicationContext("configure.xml");
+		ApplicationContext contianer =  new ClassPathXmlApplicationContext("configure.xml");
 		 System.out.println(contianer);
 		 FootBall football = contianer.getBean(FootBall.class);
 		 System.out.println("BrandName Of FootBall is:" +football.getBrandName());
