@@ -17,23 +17,5 @@
 	<constructor-arg name = "height" value = "500000"></constructor-arg>
 	<constructor-arg name = "price" value = "100000.00D"></constructor-arg>
 	</bean>
-
-	<bean class="java.lang.String"></bean>
-
-	<bean class="java.lang.Integer">
-		<constructor-arg name="value" value="12"></constructor-arg>
-	</bean>
-	<bean class="java.lang.Double">
-		<constructor-arg name="value" value="20.00D"></constructor-arg>
-	</bean>
-	<bean class="java.lang.Float">
-		<constructor-arg name="value" value="2.52"></constructor-arg>
-		<constructor-arg name="value" value="20.00D"></constructor-arg>
-	</bean>
-	<bean class="java.lang.Character">
-		<constructor-arg name="value" value="A"></constructor-arg>
-	</bean>
-	<bean class="java.lang.Boolean">
-		<constructor-arg name="value" value="true"></constructor-arg>
-	</bean>
+	
 </beans> 

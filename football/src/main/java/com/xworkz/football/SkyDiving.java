@@ -6,9 +6,6 @@ public class SkyDiving {
 	private Double height;
 	private Double price;
 	
-	
-
-
 	public String getLocation() {
 		return location;
 	}

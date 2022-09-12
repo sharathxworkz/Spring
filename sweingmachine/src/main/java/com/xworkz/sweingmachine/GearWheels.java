@@ -19,7 +19,7 @@ public class GearWheels {
 		return noOfWheels;
 	}
 
-	@Value("13")
+	@Value("${noOfWheels}")
 	public void setNoOfWheels(Integer noOfWheels) {
 		this.noOfWheels = noOfWheels;
 	}

@@ -31,7 +31,7 @@ public class Tailormachine {
 		return brandName;
 	}
 
-	@Value("Poonam")
+	@Value("${BrandName}")
 	public void setBrandName(String brandName) {
 		this.brandName = brandName;
 	}
@@ -39,7 +39,7 @@ public class Tailormachine {
 	public String getColor() {
 		return color;
 	}
-	@Value("Black-Gold")
+	@Value("${color}")
 	public void setColor(String color) {
 		this.color = color;
 	}
@@ -48,7 +48,7 @@ public class Tailormachine {
 		return price;
 	}
 
-	@Value("1500D")
+	@Value("${cost}")
 	public void setPrice(Double price) {
 		this.price = price;
 	}
@@ -57,7 +57,7 @@ public class Tailormachine {
 		return material;
 	}
 	
-	@Value("Metal")
+	@Value("Metarial")
 	public void setMaterial(String material) {
 		this.material = material;
 	}

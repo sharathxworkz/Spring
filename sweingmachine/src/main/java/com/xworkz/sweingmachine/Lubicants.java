@@ -21,7 +21,7 @@ public class Lubicants {
 	}
 
 
-	@Value("Oil")
+	@Value("${type}")
 	public void setType(String type) {
 		this.type = type;
 	}
