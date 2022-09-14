@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.xworkz.dammy.src.DammyDolls">
+	<constructor-arg name="dollName" value="neverFall"></constructor-arg>
+	<constructor-arg name="price" value="500"></constructor-arg>
+	<constructor-arg name="origin" value="India"></constructor-arg>
+	</bean>
+
+</beans>
