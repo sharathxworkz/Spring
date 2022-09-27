@@ -24,7 +24,7 @@ public class JobServlet extends HttpServlet {
 	}
 	
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("Calling Service Method for");
 		resp.setContentType("text/html");
 		String name = req.getParameter("aName");
@@ -49,9 +49,9 @@ public class JobServlet extends HttpServlet {
 		String whiteSpace = req.getParameter("ws");
 		String Linux = req.getParameter("linux");
 		String Kali = req.getParameter("kali");
-		String JSP = req.getParameter("jsp");
+		String Jsp = req.getParameter("jsp");
 		String Angular = req.getParameter("angul");
-		List skillSet = new ArrayList();
+		List<String> skillSet = new ArrayList<String>();
 		skillSet.add(Java);
 		skillSet.add(Php);
 		skillSet.add(cPlus);
@@ -64,12 +64,13 @@ public class JobServlet extends HttpServlet {
 		skillSet.add(whiteSpace);
 		skillSet.add(Linux);
 		skillSet.add(Kali);
+		skillSet.add(Jsp);
 		skillSet.add(Angular);
+		String skills = req.getParameter("skillSet");
 		String CTC = req.getParameter("package");
 		String experience = req.getParameter("exp");
 		String IdName = req.getParameter("id");
 		String idNum = req.getParameter("idn");
-		String skill = req.getParameter("skill");
 		System.out.println(name);
 		System.out.println(email);
 		System.out.println(num);
@@ -107,7 +108,7 @@ public class JobServlet extends HttpServlet {
 		.append("<br>")
 		.append(address)
 		.append("<br>")
-		.append(skillSet)
+		.append((CharSequence) skillSet)
 		.append("<br>")
 		.append(CTC)
 		.append("<br>")
