@@ -3,6 +3,7 @@ package com.xworkz.job.web.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -35,12 +36,54 @@ public class JobServlet extends HttpServlet {
 		String yop = req.getParameter("year");
 		String Eboard = req.getParameter("board");
 		String address = req.getParameter("location");
-		String skill = req.getParameter("skill");
+		String Java = req.getParameter("java");
+		String Php = req.getParameter("php");
+		String Python = req.getParameter("python");
+		String cPlus = req.getParameter("c++");
+		String Js = req.getParameter("js");
+		String Json = req.getParameter("json");
+		String Wp = req.getParameter("wp");
+		String Magnito = req.getParameter("mag");
+		String Ruby = req.getParameter("ruby");
+		String Perl = req.getParameter("perl");
+		String whiteSpace = req.getParameter("ws");
+		String Linux = req.getParameter("linux");
+		String Kali = req.getParameter("kali");
+		String JSP = req.getParameter("jsp");
+		String Angular = req.getParameter("angul");
+		List skillSet = new ArrayList();
+		skillSet.add(Java);
+		skillSet.add(Php);
+		skillSet.add(cPlus);
+		skillSet.add(Js);
+		skillSet.add(Json);
+		skillSet.add(Wp);
+		skillSet.add(Magnito);
+		skillSet.add(Ruby);
+		skillSet.add(Perl);
+		skillSet.add(whiteSpace);
+		skillSet.add(Linux);
+		skillSet.add(Kali);
+		skillSet.add(Angular);
 		String CTC = req.getParameter("package");
 		String experience = req.getParameter("exp");
 		String IdName = req.getParameter("id");
 		String idNum = req.getParameter("idn");
-		System.out.println(name+ email + num + Anum + gender + education + yop + Eboard + address + CTC + experience + IdName + idNum);;
+		String skill = req.getParameter("skill");
+		System.out.println(name);
+		System.out.println(email);
+		System.out.println(num);
+		System.out.println(Anum);
+		System.out.println(gender);
+		System.out.println(education);
+		System.out.println(yop);
+		System.out.println(Eboard);
+		System.out.println(address);
+		System.out.println(skillSet);
+		System.out.println(CTC);
+		System.out.println(experience);
+		System.out.println(IdName);
+		System.out.println(idNum);
 		
 		PrintWriter writer = resp.getWriter();
 		writer.append("<html>")
@@ -64,7 +107,7 @@ public class JobServlet extends HttpServlet {
 		.append("<br>")
 		.append(address)
 		.append("<br>")
-		.append(skill)
+		.append(skillSet)
 		.append("<br>")
 		.append(CTC)
 		.append("<br>")
@@ -77,7 +120,7 @@ public class JobServlet extends HttpServlet {
 		.append("</body>")
 		.append("</html>");
 		
-		JobApplicationDTO dtos=new JobApplicationDTO(name, email,Long.parseLong(num), Long.parseLong(Anum), gender, education, yop, Eboard, address, skill, Double.parseDouble(CTC), experience,IdName ,idNum);
+		JobApplicationDTO dtos=new JobApplicationDTO(name, email,Long.parseLong(num), Long.parseLong(Anum), gender, education, yop, Eboard, address, skillSet, Double.parseDouble(CTC), experience,IdName ,idNum);
 		 System.out.println(dto.add(dtos));
 	}
 

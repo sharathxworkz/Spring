@@ -1,5 +1,7 @@
 package com.xworkz.job.dto;
 
+import java.util.List;
+
 public class JobApplicationDTO {
 
 	private String name;
@@ -11,7 +13,7 @@ public class JobApplicationDTO {
 	private String yop;
 	private String university;
 	private String address;
-	private String skills;
+	private List skillSet;
 	private Double ctc;
 	private String experience;
 	private String idProof;
@@ -22,8 +24,9 @@ public class JobApplicationDTO {
 	}
 
 	public JobApplicationDTO(String name, String email, Long phoneNo, Long alPhoneNo, String gender,
-			String qualification, String yop, String university, String address, String skills, Double ctc,
+			String qualification, String yop, String university, String address, List skillSet, Double ctc,
 			String experience, String idProof, String num) {
+		super();
 		this.name = name;
 		this.email = email;
 		this.phoneNo = phoneNo;
@@ -33,7 +36,7 @@ public class JobApplicationDTO {
 		this.yop = yop;
 		this.university = university;
 		this.address = address;
-		this.skills = skills;
+		this.skillSet = skillSet;
 		this.ctc = ctc;
 		this.experience = experience;
 		this.idProof = idProof;
@@ -44,9 +47,13 @@ public class JobApplicationDTO {
 	public String toString() {
 		return "JobApplicationDTO [name=" + name + ", email=" + email + ", phoneNo=" + phoneNo + ", alPhoneNo="
 				+ alPhoneNo + ", gender=" + gender + ", qualification=" + qualification + ", yop=" + yop
-				+ ", university=" + university + ", address=" + address + ", skills=" + skills + ", ctc=" + ctc
+				+ ", university=" + university + ", address=" + address + ", skillSet=" + skillSet + ", ctc=" + ctc
 				+ ", experience=" + experience + ", idProof=" + idProof + ", num=" + num + "]";
 	}
+
+	
+	
+
 	
 	
 }
