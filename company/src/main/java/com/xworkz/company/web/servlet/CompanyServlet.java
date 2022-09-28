@@ -71,13 +71,38 @@ public class CompanyServlet extends HttpServlet {
 		resp.setContentType("text/html");
 		PrintWriter writer=resp.getWriter();
 		writer.append("<html>")
+		.append("<head>")
+		.append("<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">")
 		.append("<body>")
 		.append("<h3>")
 		.append("Display All The Details Entered By Endusers")
 		.append("</h3>")
-		.append("<Table>");
+		.append("<Table class=table>");
 		for (CompanyDTO companyDTO : companies) {
-		 writer.append("<tr>")
+		writer.append("<thead>")
+		.append("<tr>")
+		.append("<th>")
+		.append("Company Name")
+		.append("</th>")
+		.append("<th>")
+		.append("Company Founder")
+		.append("</th>")
+		.append("<th>")
+		.append("Company Started Date")
+		.append("</th>")
+		.append("<th>")
+		.append("No Of Employees In Company")
+		.append("</th>")
+		.append("<th>")
+		.append("Company Location")
+		.append("</th>")
+		.append("<th>")
+		.append("Company Functionality Type")
+		.append("</th>")
+		.append("</tr>")
+		.append("</thead>")
+		.append("<tbody>")
+		.append("<tr>")
 		.append("<td>")
 		.append(companyDTO.getCompanyName())
 		.append("</td>")
@@ -96,9 +121,11 @@ public class CompanyServlet extends HttpServlet {
 		.append("<td>")
 		.append(companyDTO.getCompanyType())
 		.append("</td>")
-		.append("</tr>");
+		.append("</tr>")
+		.append("</tbody>");
 		}
 		writer.append("</Table>")
+		.append("</head>")
 		.append("</body>")
 		.append("</html>");	
 	}
