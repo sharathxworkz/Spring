@@ -31,5 +31,6 @@ Technology:<input type="text" name="tech" id="tec"/>
 <br>
 <input type="submit" value="Save"/>
 </form>
+<a href="CommitSucide.jsp">Sucide Details</a>
 </body>
 </html>
