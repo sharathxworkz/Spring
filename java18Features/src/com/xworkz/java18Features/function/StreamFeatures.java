@@ -2,6 +2,8 @@ package com.xworkz.java18Features.function;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamFeatures {
 
@@ -39,7 +41,13 @@ public class StreamFeatures {
 			states.add("Telangana");
 			states.add("Delhi");
 			states.add("Jammu & Kashmir");
+			states.add("mam");
+			states.add("mam");
 			
+			System.out.println("Duplicates");
+			List<String> collect = states.stream().distinct().collect(Collectors.toList());
+			System.out.println(collect);
+			System.out.println("----------------------------------");
 			System.out.println("No Of States Present");
 			System.out.println(states.size());
 			System.out.println("------------------------------");
@@ -79,5 +87,8 @@ public class StreamFeatures {
 			System.out.println("Reverse Of String");
 			states.stream().forEach((ref)->System.out.println(new StringBuffer().append(ref).reverse()));
 		    System.out.println("----------------------------");
+		    System.out.println("Palindrome");
+		    states.stream().forEach((ref)->System.out.println(states.equals(new StringBuilder(ref).reverse().toString())));
+		    
 	}
 }
