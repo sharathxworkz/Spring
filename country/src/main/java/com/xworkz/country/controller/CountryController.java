@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Component
@@ -20,7 +21,7 @@ public class CountryController {
 	}
 	
 	@RequestMapping("/land.do")
-	public String onSave(Model model) {
+	public ModelAndView onSave() {
 		city.add("Banglore");
 		city.add("Mysore");
 		city.add("ChickaManglore");
@@ -28,9 +29,11 @@ public class CountryController {
 		city.add("Hassan");
 		city.add("Hampi");
 		
-		model.addAttribute("cities", city);
-		return "index.jsp";
-		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("cities", city);
+		mv.setViewName("index.jsp");
+		mv.addObject("cities", city);
+		return mv;
 		
 	}
 	
