@@ -7,7 +7,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class SpringMvcInitializer extends AbstractAnnotationConfigDispatcherServletInitializer implements WebMvcConfigurer{
 
 	private String[] getServletMappings = {"/"};
-	private Class[] getServletConfigClasses = {SpringConfiguration.class};
+	private Class[] getServletConfigClasses = {SpringConfiguration.class,DBConfiguration.class};
 	
 	public SpringMvcInitializer() {
 		
