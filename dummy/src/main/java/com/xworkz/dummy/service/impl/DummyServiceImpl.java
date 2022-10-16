@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.xworkz.dummy.dao.DummyDAO;
+import com.xworkz.dummy.dao.impl.DummyDAOImpl;
 import com.xworkz.dummy.dto.DummyDTO;
 import com.xworkz.dummy.service.DummyService;
 

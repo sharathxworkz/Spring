@@ -21,19 +21,20 @@ public class DummyDAOImpl implements DummyDAO {
 	@Override
 	public void save(DummyDTO dummy) {
 		System.out.println("Calling DAO Save Method");
-		EntityManager manager = factory.createEntityManager();
+		EntityManager createEntityManager = factory.createEntityManager();
 		
 		try {
-			EntityTransaction transaction = manager.getTransaction();
+			EntityTransaction transaction = createEntityManager.getTransaction();
 			transaction.begin();
-			manager.persist(dummy);
+			createEntityManager.persist(dummy);
 			transaction.commit();
 		}
 		catch(PersistenceException p) {
 			System.out.println("exception in save dao" + p.getMessage());
+			p.printStackTrace();
 		}
 		finally {
-			manager.close();
+			createEntityManager.close();
 		}
 	}
 

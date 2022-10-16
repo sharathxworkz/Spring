@@ -18,7 +18,7 @@ public class MilkShopDAOImpl implements MilkShopDAO {
 	private EntityManagerFactory factory;
 
 	@Override
-	public void Save(MilkShopDTO milk) {
+	public void save(MilkShopDTO milk) {
 		System.out.println("Calling Save Method Of MilkShopDAO");
 		 EntityManager createEntityManager = factory.createEntityManager();
 

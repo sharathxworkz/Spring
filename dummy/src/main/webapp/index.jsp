@@ -17,5 +17,7 @@ ContactInfo:<input type="text" name="phNo"/><br>
 <input type="submit" value="Save"/>
 </pre>
 </form>
+<br>
+<a href="shirt.jsp">Shirt Details</a>
 </body>
 </html>

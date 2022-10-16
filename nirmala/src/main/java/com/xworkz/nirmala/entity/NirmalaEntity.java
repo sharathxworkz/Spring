@@ -27,8 +27,8 @@ import lombok.ToString;
 public class NirmalaEntity extends BasicEntity {
 
 	@Id
-	@GenericGenerator (name = "wash", strategy = "increment")
-	@GeneratedValue (generator = "wash")
+	@GenericGenerator (name = "man", strategy = "increment")
+	@GeneratedValue (generator = "man")
 	@Min(value = 1)
 	private Integer nId;
 	@NotNull

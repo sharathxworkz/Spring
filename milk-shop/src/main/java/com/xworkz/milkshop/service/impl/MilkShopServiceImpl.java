@@ -1,7 +1,6 @@
 package com.xworkz.milkshop.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.xworkz.milkshop.dao.MilkShopDAO;
@@ -17,7 +16,7 @@ public class MilkShopServiceImpl implements MilkShopService {
 	@Override
 	public Boolean saveAndValidate(MilkShopDTO milk) {
 		System.out.println("Calling saveAndValidate Method");
-		milkShopDAO.Save(milk);
+		milkShopDAO.save(milk);
 		return true;
 	}
 	

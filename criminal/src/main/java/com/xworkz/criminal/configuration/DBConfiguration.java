@@ -1,15 +1,15 @@
-package com.xworkz.dummy.configuration;
+package com.xworkz.criminal.configuration;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
-@Configuration
 public class DBConfiguration {
 
 	public DBConfiguration() {
@@ -27,8 +27,7 @@ public class DBConfiguration {
 
 		Map<String, Object> jpaProperties = new HashMap<String, Object>();
 		jpaProperties.put("hibernate.show_sql", true);
-		//jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.Mysql5Dialect");
-
+		
 		factoryBean.setJpaPropertyMap(jpaProperties);
 		return factoryBean;
 
@@ -40,7 +39,7 @@ public class DBConfiguration {
 		System.out.println("Created DataSource");
 		DriverManagerDataSource dataSourse = new DriverManagerDataSource();
 		dataSourse.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSourse.setUrl("jdbc:mysql://localhost:3306/cartoon");
+		dataSourse.setUrl("jdbc:mysql://localhost:3306/bar");
 		dataSourse.setPassword("1JT14IS044shadow");
 		dataSourse.setUsername("root");
 		return dataSourse;
