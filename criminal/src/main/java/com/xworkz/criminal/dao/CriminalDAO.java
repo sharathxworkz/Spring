@@ -8,4 +8,5 @@ public interface CriminalDAO {
 
 	public void save(CriminalDTO criminal);
 	public List<CriminalDTO> findAll();
+	public List<CriminalDTO> findByName(String name);
 }

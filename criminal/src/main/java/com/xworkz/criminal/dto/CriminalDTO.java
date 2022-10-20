@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -18,7 +20,8 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name = "criminal")
-@NamedQueries({ @NamedQuery(name = "findAll", query = "select criminal from CriminalDTO criminal") })
+@NamedQueries({ @NamedQuery(name = "findAll", query = "select criminal from CriminalDTO criminal"),
+	@NamedQuery(name="findByName", query="select criminal from CriminalDTO criminal where criminal.criminalName=:nm")})
 
 public class CriminalDTO {
 
@@ -26,6 +29,8 @@ public class CriminalDTO {
 	@GenericGenerator(name = "crime", strategy = "increment")
 	@GeneratedValue(generator = "crime")
 	private Integer cId;
+	@Min(value=3)
+	@Max(value=10)
 	private String criminalName;
 	private String criminalAge;
 	private String country;

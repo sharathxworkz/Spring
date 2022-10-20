@@ -5,32 +5,49 @@ import com.xworkz.exceptions.AtmRunTimeException;
 
 public class AtmDAOImpl implements AtmDAO{
 
+	AtmException atm = new AtmException();
+	AtmRunTimeException atmExcp	= new AtmRunTimeException();
+	
 	@Override
-	public Boolean withdrawal(Integer amount) throws AtmException {
+	public void withdrawal(Integer amount) throws AtmException  {
 		
-		if(amount <= 30000) {
-			System.out.println("Please Wait For The Cash and Collect Your Card ");
-			return true;
+		System.out.println("Calling Withdrawal Method");
+		if(amount >30000) {
+			throw atm;
 		}
+		
 		else {
-			System.out.println("Entered exception");
-			throw new AtmException("Amount Entered Exceeds the Limit");
+			System.out.println("Wait For The Cash And Collect Your Card");
 		}
-
 	}
 
 	@Override
-	public Boolean invalidAmount(Integer amount)throws AtmRunTimeException {
-		
-		if(amount > 100 & amount<=30000) {
-			System.out.println("Entered Amount is Valid Wait for the Cash");
-			return true;
+	public void swipetimes(Integer times) throws AtmException {
+		System.out.println("Calling swipeTimesExceded Method");
+		if(times > 3) {
+			throw atm;
 		}
+		
 		else {
-			System.out.println("invalid");
-			throw new AtmRunTimeException("Amount Entered is Invalid");
+			System.out.println("Wait For The Cash And Collect Your Card");
 		}
 		
 	}
+
+	@Override
+	public void enterAmount(Integer amount) {
+
+		System.out.println("Calling invalidAmount Method");
+		if(amount < 50 ) {
+			throw atmExcp;
+		}
+		
+		else {
+			System.out.println("Wait For The Cash And Collect Your Card");
+		}
+		
+	}
+
+
 
 }

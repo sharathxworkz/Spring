@@ -63,6 +63,7 @@ NetWorth:<input type="text" name="netWorth"/><br>
 <input type="submit" value="Send"/>
 </pre>
 </form>
+<a href="DisplayByName.jsp">Search By Name</a>
 <a href="criminal">Criminal Details</a>
 </body>
 </html>

@@ -2,6 +2,8 @@ package com.xworkz.criminal.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,7 @@ import com.xworkz.criminal.service.CriminalService;
 
 @Controller
 @RequestMapping("/criminal")
-public class CriminalDataController {
+public class CriminalDataController{
 
 	@Autowired
 	private CriminalService criminalService;
@@ -53,4 +55,25 @@ public class CriminalDataController {
 		return "CriminalData";
 		
 	}
+	
+	@GetMapping("/findByName")
+	public String findByName(HttpServletRequest request, Model model) {
+		String name = request.getParameter("criminalName");
+		List<CriminalDTO> crimeDTO = criminalService.findByName(name);
+		if(crimeDTO != null & !crimeDTO.isEmpty()) {
+			System.out.println("The records Are Found"+crimeDTO.size());
+			model.addAttribute("CriminalDetails", crimeDTO);
+			model.addAttribute("RecordCount","No Of Records Found"+crimeDTO.size());
+		}
+		else {
+			System.out.println("No Records Are Found");
+		}
+		
+		
+		return "CriminalData";
+	}
+	
+	
+	
+	
 }

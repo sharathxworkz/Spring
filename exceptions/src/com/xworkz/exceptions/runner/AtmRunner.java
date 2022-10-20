@@ -7,17 +7,24 @@ import com.xworkz.exceptions.dao.AtmDAOImpl;
 
 public class AtmRunner {
 
-	public static void main(String[] args)  {
+	public static void main(String[] args)   {
 		
 		AtmDAO atm = new AtmDAOImpl();
-//		atm.withdrawal(5000);
+		
 		try {
-		atm.invalidAmount(50);
+			atm.swipetimes(4);
+		} catch (AtmException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
-		catch (AtmRunTimeException at) {
-			System.out.println(at.getClass());
+		try {
+			atm.withdrawal(50000);
+			atm.swipetimes(4);
+		} catch (AtmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		System.out.println("Get The Amount");
+		
 	}
 
 }

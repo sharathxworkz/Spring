@@ -7,4 +7,5 @@ public interface CriminalService {
 
 	public Boolean validateAndSave(CriminalDTO criminal);
 	public List<CriminalDTO> findAll();
+	public List<CriminalDTO> findByName(String name);
 }
