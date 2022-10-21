@@ -1,5 +1,9 @@
 package com.xworkz.criminal.controller;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.xworkz.criminal.dto.CriminalDTO;
 import com.xworkz.criminal.service.CriminalService;
@@ -26,8 +32,11 @@ public class CriminalDataController{
 	}
 	
 	@PostMapping
-	public String onSend(CriminalDTO criminal,Model model) {
+	public String onSend(CriminalDTO criminal,Model model,@RequestParam("image") MultipartFile file) throws IOException {
 		System.out.println("Calling onSend Method");
+		byte[] bytes = file.getBytes();
+        Path path = Paths.get("D:/temp-files/" + file.getOriginalFilename());
+        Files.write(path, bytes);
 		Boolean save = criminalService.validateAndSave(criminal);
 		if(save) {
 			System.out.println("Data Entered Are Vallid");

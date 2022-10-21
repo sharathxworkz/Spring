@@ -52,7 +52,6 @@ public class CriminalDTO {
 	private String rightHandName;
 	private String leftHandName;
 	private String prisonName;
-
 	private String netWorth;
 
 	public CriminalDTO() {
