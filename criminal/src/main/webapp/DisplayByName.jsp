@@ -13,5 +13,3 @@ CriminalName:<input type="text" name="criminalName"/>
 </form>
 </body>
 </html>
-</body>
-</html>

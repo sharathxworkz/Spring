@@ -64,4 +64,22 @@ public class CriminalServiceImpl implements CriminalService {
 		return null;
 	}
 
+	@Override
+	public List<CriminalDTO> findByAgeCountryGender(String age, String country, String gender) {
+		System.out.println("Calling findByAgeCountryGender");
+		ValidatorFactory validator = Validation.buildDefaultValidatorFactory();
+		Validator validate = validator.getValidator();
+		Set<ConstraintViolation<String>> val1 = validate.validate(age);
+		Set<ConstraintViolation<String>> val2 = validate.validate(country);
+		Set<ConstraintViolation<String>> val3 = validate.validate(gender);
+		
+		if(val1.size()>0 & val2.size()>0 & val3.size()>0) {
+			System.out.println("Details Entered Are Invalid");
+		}
+		else {
+			System.out.println("Details Entered Are Valid");
+			return criminalDAO.findByAgeCountryGender(age, country, gender);
+		}
+		return null;
+	}
 }

@@ -73,7 +73,25 @@ public class CriminalDataController{
 		return "CriminalData";
 	}
 	
-	
-	
+	@GetMapping("/findByMany")
+	public String findBYMany(HttpServletRequest request,Model model) {
+		System.out.println("Calling findBYMany Method");
+		String age = request.getParameter("criminalAge");
+		String country = request.getParameter("country");
+		String gender = request.getParameter("gender");
+		List<CriminalDTO> criminalDTO = criminalService.findByAgeCountryGender(age, country, gender);
+		if(criminalDTO !=null & !criminalDTO.isEmpty()) {
+			System.out.println("No Of Records Found"+criminalDTO.size());
+			model.addAttribute("CriminalDetails", criminalDTO);
+			model.addAttribute("Records", "Records in DB"+criminalDTO.size());
+		}
+		else {
+			
+			System.out.println("No records Are Found In DB");
+		}
+			
+		return "CriminalData";
+		
+	}
 	
 }

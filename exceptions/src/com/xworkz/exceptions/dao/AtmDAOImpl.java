@@ -5,15 +5,16 @@ import com.xworkz.exceptions.AtmRunTimeException;
 
 public class AtmDAOImpl implements AtmDAO{
 
-	AtmException atm = new AtmException();
 	AtmRunTimeException atmExcp	= new AtmRunTimeException();
 	
 	@Override
-	public void withdrawal(Integer amount) throws AtmException  {
+	public void withdrawal(Integer amount) throws AtmException   {
 		
 		System.out.println("Calling Withdrawal Method");
 		if(amount >30000) {
-			throw atm;
+			AtmException atm = new AtmException();
+				throw atm;
+			
 		}
 		
 		else {
@@ -25,6 +26,7 @@ public class AtmDAOImpl implements AtmDAO{
 	public void swipetimes(Integer times) throws AtmException {
 		System.out.println("Calling swipeTimesExceded Method");
 		if(times > 3) {
+			AtmException atm = new AtmException();
 			throw atm;
 		}
 		

@@ -13,17 +13,16 @@ public class AtmRunner {
 		
 		try {
 			atm.swipetimes(4);
-		} catch (AtmException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		try {
+			System.out.println("executing after swipe");
 			atm.withdrawal(50000);
 			atm.swipetimes(4);
-		} catch (AtmException e) {
+		} catch (AtmException e1) {
+			System.out.println("comming to main catch block");
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
+			
 		}
+		
 		
 	}
 
